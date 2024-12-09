@@ -1,0 +1,11 @@
+{
+  "name": "learning_node_js",
+  "version": "1.0.0",
+  "description": "This is a readme file",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vybe",
+  "license": "MIT"
+}
