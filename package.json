@@ -2,6 +2,7 @@
   "name": "learning_node_js",
   "version": "1.0.0",
   "description": "This is a readme file",
+  "type":"module",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
