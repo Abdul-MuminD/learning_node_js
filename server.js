@@ -1,24 +1,36 @@
-//import express
-import express from 'express'
+import dotenv from "dotenv";
+dotenv.config();
+
+import express from "express";
 
 //assign port to a variable
-const PORT = 4000
+const PORT = process.env.PORT || 4000;
 
 //instantiate the app
 const app = express();
 
-app.get('/user',(req,res)=>{
-    res.send('name=ali, email=ali@ex.com, age=20');
+//middlewares to handle json data and form data respectively
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.get("/home", (req, res) => {
+  res.json({ students:{
+    student1:{
+        name:'Mumin',
+        class:'Middle',
+        age:20
+    },
+    student2:{
+        name:'Abdul',
+        class:'Lower',
+        age:16
+    }
+}});
 });
 
-app.get('/post',(req,res)=>{
 
-    res.send(
-        'posts:{post1: {title:title1,image:image1,content:content1}, post2: {title:title2,image:image2,content:content2}}'
-    );
-})
 
 //listen on a port
-app.listen(PORT,() => {
-console.log (`server listening on port http://localhost:${PORT}`);
-})
+app.listen(PORT, () => {
+  console.log(`server listening on port http://localhost:${PORT}`);
+});
